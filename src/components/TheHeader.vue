@@ -1,11 +1,24 @@
 <template>
-    <header> 
-        <p>Pythonando</p>
+    <header id="MeuHeader"> 
+        <p>{{nomeEmpresa}} - CNPJ: {{cnpj}}</p>
     </header>
 </template>
 
 <script>
     export default{
+        data(){
+            return{
+                cnpj: '',
+                nomeEmpresa: ''
+            }
+        },
+        created(){
+            this.cnpj = '76.717.248/0001-30'
+            this.nomeEmpresa = 'Pythonando'
+        },
+        mounted(){
+            console.log(document.getElementById('MeuHeader'))
+        }
 
     }
 </script>

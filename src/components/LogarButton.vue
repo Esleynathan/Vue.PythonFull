@@ -2,9 +2,7 @@
     <div v-if="local === 'materiais'"> Você esta nos materiais</div>
     <div v-else-if="local === 'sobre'"> Você esta no sobres</div>
     <div v-else> Você esta no duvidas</div>
-    <hr>
-    <br>
-    <br>
+    <hr><br>
 
     <div 
     v-for="(curso, index) in cursos"
@@ -16,6 +14,21 @@
         <p>{{ curso.duracao }}</p>
         <hr>
     </div>
+    <br>
+
+    <input placeholder="Pontos" :value="pontos">
+    <button v-on:click="contar()">Soma 10</button>
+    <hr><br>
+
+    <input v-model="contador" placeholder="Pontos">
+    <p> O valor é: {{contador}}</p>
+    <hr><br>
+
+    <select v-model="curso">
+        <option value="pf">Python Full</option>
+        <option value="vf">Vue Full</option>
+    </select>
+    O valor é: {{ curso }}
 
 
 </template>
@@ -40,6 +53,14 @@
                         duracao: '20',                    
                     },
                 ],
+                pontos: 0,
+                contador: '100',
+                curso: 'pf',
+            }
+        },
+        methods: {
+            contar(){
+                this.pontos = this.pontos + 10
             }
         }
 

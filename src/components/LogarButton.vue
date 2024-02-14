@@ -29,7 +29,14 @@
         <option value="vf">Vue Full</option>
     </select>
     O valor é: {{ curso }}
+    <hr><br>
 
+    <button @click.stop="clickButton">
+        Button
+    </button>
+    <hr><br>
+
+    <a @click.prevent="click" href="https://plataforma.pythonando.com.br">Clique aqui.</a>
 
 </template>
 
@@ -56,11 +63,22 @@
                 pontos: 0,
                 contador: '100',
                 curso: 'pf',
+                counter: 0,
             }
         },
         methods: {
             contar(){
                 this.pontos = this.pontos + 10
+            },
+            clickButton(){
+                console.log('Click no botão')
+            },
+            clickDiv(){
+                console.log('Click no div')
+            },
+            click(){
+                console.log('Fui Chamado')
+                window.location.href = "https://plataforma.pythonando.com.br"
             }
         }
 

@@ -2,7 +2,7 @@
     <div>
         <p>Python Full</p>
         <hr>
-        <ListaModulos :modulos="lmodulos"/>
+        <ListaModulos v-if="exibirModulo" @fecharFilho="fechar()" :modulos="lmodulos"/>
 
     </div>
 
@@ -17,7 +17,14 @@
         },
         data(){
             return{
-                lmodulos: ['Introdução ao Python', 'Django', 'Banco de dados']
+                lmodulos: ['Introdução ao Python', 'Django', 'Banco de dados'],
+                curso: 'Python Full',
+                exibirModulo: true,
+            }
+        },
+        methods:{
+            fechar(){
+                this.exibirModulo = !this.exibirModulo
             }
         }
     }

@@ -1,18 +1,21 @@
 <template>
   <TheHeader/>
   <LogarButton/>
+  <TheCurso/>
 
 </template>
 
 <script>
   import TheHeader from './components/TheHeader.vue';
   import LogarButton from './components/LogarButton.vue';
+  import TheCurso from './components/TheCurso.vue';
 
   export default{
     components: {
-      TheHeader,
-      LogarButton,
-    }
+    TheHeader,
+    LogarButton,
+    TheCurso
+}
   }
 </script>
 
